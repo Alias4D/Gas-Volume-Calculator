@@ -32,9 +32,25 @@ def calculate_gas_volume(pressure, temperature, molar_mass, z, mass):
 
   return volume
 
-st.set_page_config(page_title="Gas [ Mass 2 Volume ] Convertor",page_icon="🧮")
-
+# Create the Streamlit app
+st.set_page_config(page_title="Gas [ Mass 2 Volume ] Convertor",page_icon="🧮",layout="wide")
 st.header(" 🧮 Gas [ Mass >>> Volume ] Convertor")
+
+hide_menu_style = """
+        <style>
+        #MainMenu {visibility: hidden;}
+        </style>
+        """
+st.markdown(hide_menu_style, unsafe_allow_html=True)
+
+hide_streamlit_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
 c1,c2 = st.columns(spec=[0.4,0.6],gap="large")
 
 # Input fields
